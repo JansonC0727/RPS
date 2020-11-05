@@ -1,0 +1,83 @@
+import random
+import time
+print('Welcome to Rock Paper Scissors!')
+
+def again():
+  try:
+    playerinput = input("Pick rock paper or scissors.(lowercase please)")
+    if playerinput == "rock":
+      playermove = 'rock'
+    elif playerinput == "paper" or "Paper":
+      playermove = 'paper'
+    elif playerinput == "scissors" or "Scissors":
+      playermove = 'scissors'
+    print'Player move was', playermove + '.'
+    time.sleep(1)
+    aimoves = ["rock","paper","scissors"]
+    ai = random.choice(aimoves)
+    aimove = ai
+    print'Opponent\'s move was', aimove + '.'
+    if playerinput == "rock" and aimove == "paper" :
+      print("Sorry you lost.")
+      start()
+    elif playerinput == 'rock' and aimove == 'scissors':
+      print("You Win!")
+    elif playerinput == aimove :
+      print("Tie!")
+      start()
+    elif playerinput == 'paper' and aimove == 'scissors':
+      print("Sorry you lost.")
+      start()
+    elif playerinput == 'paper' and aimove == 'rock':
+      print("You Win!")
+    elif playerinput == 'scissors' and aimove == 'rock':
+      print("Sorry you lost.")
+      start()
+    elif playerinput == 'scissors' and aimove == 'paper':
+      print("You Win!")
+    else:
+      print("yikes")
+  except:
+    print("That didn't work try again.")
+    start()
+
+
+def start():
+  try:
+    playerinput = input("Pick rock paper or scissors.(lowercase please)")
+    if playerinput == "rock":
+      playermove = 'rock'
+    elif playerinput == "paper" or "Paper":
+      playermove = 'paper'
+    elif playerinput == "scissors" or "Scissors":
+      playermove = 'scissors'
+    print'Player move was', playermove + '.'
+    time.sleep(1)
+    aimoves = ["rock","paper","scissors"]
+    ai = random.choice(aimoves)
+    aimove = ai
+    print'Opponent\'s move was', aimove + '.'
+    if playerinput == "rock" and aimove == "paper" :
+      print("Sorry you lost.")
+      again()
+    elif playerinput == 'rock' and aimove == 'scissors':
+      print("You Win!")
+    elif playerinput == aimove :
+      print("Tie!")
+      again()
+    elif playerinput == 'paper' and aimove == 'scissors':
+      print("Sorry you lost.")
+      again()
+    elif playerinput == 'paper' and aimove == 'rock':
+      print("You Win!")
+    elif playerinput == 'scissors' and aimove == 'rock':
+      print("Sorry you lost.")
+      again()
+    elif playerinput == 'scissors' and aimove == 'paper':
+      print("You Win!")
+    else:
+      print("yikes")
+  except:
+    print("That didn't work try again.")
+    again()
+start()
